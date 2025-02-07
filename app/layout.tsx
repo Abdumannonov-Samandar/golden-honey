@@ -1,4 +1,6 @@
 import RootProvider from "@/components/global/provider";
+import SiteFooter from '@/components/global/site-footer'
+import SiteHeader from '@/components/global/site-header'
 import "@/styles/globals.css";
 import { baseURL, createMetadata } from "@/utils/metadata";
 import { Viewport } from "next";
@@ -17,10 +19,10 @@ const geistMono = localFont({
 
 export const metadata = createMetadata({
   title: {
-    template: "%s | Next Starter",
-    default: "Next Starter - Next.js + Prisma + Radix UI + Tailwind CSS + Vercel",
+    template: "%s | Honey",
+    default: "Honey",
   },
-  description: "Next.js + Prisma + Radix UI + Tailwind CSS + Vercel.",
+  description: "Best place to buy honey.",
   metadataBase: baseURL,
 });
 
@@ -39,7 +41,9 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+        <SiteHeader />
         <RootProvider>{children}</RootProvider>
+        <SiteFooter />
       </body>
     </html>
   );
