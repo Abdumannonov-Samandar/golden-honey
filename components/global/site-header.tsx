@@ -27,9 +27,6 @@ export default function SiteHeader() {
             Golden Hive Honey
           </Link>
 
-          {/* Hexagonal Border Container */}
-              {/* <div className="nav-hex-border" /> */}
-
           {/* Desktop Navigation */}
           <nav className="hidden lg:block">
             <div className="relative">
