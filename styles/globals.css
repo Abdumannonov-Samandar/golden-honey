@@ -4,13 +4,13 @@
 
 @layer base {
 	:root {
-		--background: 0 0% 100%;
+		--background: 0 0% 5%;
 		--foreground: 240 10% 3.9%;
 		--card: 0 0% 100%;
 		--card-foreground: 240 10% 3.9%;
 		--popover: 0 0% 100%;
 		--popover-foreground: 240 10% 3.9%;
-		--primary: 240 5.9% 10%;
+		--primary: 40 100% 50%;
 		--primary-foreground: 0 0% 98%;
 		--secondary: 240 4.8% 95.9%;
 		--secondary-foreground: 240 5.9% 10%;
@@ -65,4 +65,39 @@
 	body {
 		@apply bg-background text-foreground;
 	}
+}
+
+/* Navigation Hexagonal Border */
+.nav-hex-border {
+  @apply absolute inset-0;
+  background:
+    linear-gradient(to right, #ffb800 2px, transparent 2px) 0 0,
+    linear-gradient(to right, #ffb800 2px, transparent 2px) 0 100%,
+    linear-gradient(to left, #ffb800 2px, transparent 2px) 100% 0,
+    linear-gradient(to left, #ffb800 2px, transparent 2px) 100% 100%,
+    linear-gradient(to bottom, #ffb800 2px, transparent 2px) 0 0,
+    linear-gradient(to bottom, #ffb800 2px, transparent 2px) 100% 0,
+    linear-gradient(to top, #ffb800 2px, transparent 2px) 0 100%,
+    linear-gradient(to top, #ffb800 2px, transparent 2px) 100% 100%;
+  background-repeat: no-repeat;
+  background-size: 20px 20px;
+  clip-path: polygon(20px 0, calc(100% - 20px) 0, 100% 50%, calc(100% - 20px) 100%, 20px 100%, 0 50%);
+}
+
+/* Auth Buttons */
+.auth-button {
+  @apply relative px-8 py-2 text-sm font-normal transition-colors;
+  clip-path: polygon(15px 0, calc(100% - 15px) 0, 100% 50%, calc(100% - 15px) 100%, 15px 100%, 0 50%);
+}
+
+/* Mobile Auth Buttons */
+.mobile-auth-button {
+  @apply block text-center px-6 py-2 text-sm font-normal transition-colors;
+  clip-path: polygon(15px 0, calc(100% - 15px) 0, 100% 50%, calc(100% - 15px) 100%, 15px 100%, 0 50%);
+}
+
+@media (max-width: 320px) {
+  .mobile-auth-button {
+    clip-path: polygon(10px 0, calc(100% - 10px) 0, 100% 50%, calc(100% - 10px) 100%, 10px 100%, 0 50%);
+  }
 }
