@@ -12,7 +12,7 @@ const lora = Lora({ subsets: ["latin"], weight: ["400", "500", "600", "700"] });
 export const metadata = createMetadata({
   title: {
     template: "%s | Honey",
-    default: "Honey",
+    default: "Golden Hive",
   },
   description: "Best place to buy honey.",
   metadataBase: baseURL,

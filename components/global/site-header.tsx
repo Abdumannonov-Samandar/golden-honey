@@ -5,12 +5,9 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { usePathname } from 'next/navigation'
+import Image from 'next/image'
 
-export default function SiteHeader() {
-  const [isOpen, setIsOpen] = useState(false);
-  const pathname = usePathname();
-
-  const menuItems = [
+const menuItems = [
     { name: "Home", href: "/" },
     { name: "About Us", href: "/about" },
     { name: "Products", href: "/products" },
@@ -18,13 +15,17 @@ export default function SiteHeader() {
     { name: "Gallery", href: "/gallery" },
   ];
 
+export default function SiteHeader() {
+  const [isOpen, setIsOpen] = useState(false);
+  const pathname = usePathname();
+
   return (
-    <header className="w-full bg-[#0D0D0D] border-b border-primary/20">
-      <div className="container mx-auto px-4">
+    <header className="w-full bg-background border-b border-primary/20">
+      <div className="container">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <Link href="/" className="text-primary text-xl font-normal">
-            Golden Hive Honey
+          <Link href="/">
+            <Image src="/logo.svg" alt="Honey" width={228} height={40} />
           </Link>
 
           {/* Desktop Navigation */}
@@ -39,7 +40,7 @@ export default function SiteHeader() {
                 </svg>
               </div>
 
-              <ul className="flex space-x-8 px-16 xl:px-20 py-4 relative z-10">
+              <ul className="flex space-x-4 xl:space-x-8 px-16 xl:px-20 py-4 relative z-10">
                 {menuItems.map((item) => {
                   const isActive = pathname === item.href;
 
@@ -59,10 +60,19 @@ export default function SiteHeader() {
                           animate={{ opacity: 1, y: 0 }}
                           transition={{ duration: 0.3 }}
                         >
-                          <motion.span className="w-1 h-1 bg-primary rounded-full" layoutId="dot" />
+                          <motion.span
+                            className="w-1 h-1 bg-primary rounded-full"
+                            layoutId="dot"
+                            initial={{ opacity: 0, scale: 0 }}
+                            animate={{ opacity: 1, scale: 1 }}
+                            transition={{ duration: 0.3 }}
+                          />
                           <motion.div
-                            className="w-8 h-[1px] bg-gradient-to-r from-primary to-primary/40 rounded-lg"
+                            className="w-12 h-[1px] bg-gradient-to-r from-primary to-primary/40 rounded-lg"
                             layoutId="underline"
+                            initial={{ opacity: 0, width: 0 }}
+                            animate={{ opacity: 1, width: "3rem" }}
+                            transition={{ duration: 0.4, delay: 0.3 }}
                           />
                         </motion.div>
                       )}
@@ -78,7 +88,7 @@ export default function SiteHeader() {
             <Link href="/signin" className="auth-button border-primary text-primary">
               Sign In
             </Link>
-            <Link href="/signup" className="auth-button bg-primary text-black">
+            <Link href="/signup" className="auth-button bg-primary/50 text-slate-10">
               Sign Up
             </Link>
           </div>
@@ -103,7 +113,7 @@ export default function SiteHeader() {
                   <Link
                     href={item.href}
                     className={`block text-primary hover:text-primary/80 transition-colors ${
-                      item.name === "Home" ? "border-b border-primary" : ""
+                      pathname === item.href ? "border-b border-primary" : ""
                     }`}
                     onClick={() => setIsOpen(false)}
                   >
