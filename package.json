@@ -1,13 +1,12 @@
 {
-  "name": "next-starter",
+  "name": "golden-hive-honey",
   "version": "0.1.0",
   "private": true,
   "license": "MIT",
   "author": {
-    "name": "Shakhbozbek Usmonov",
-    "url": "https://github.com/shakhbozbekusmonov/next-starter"
+    "name": "Samandar Abdumannonov",
+    "url": "https://github.com/Abdumannonov-Samandar/next-starter"
   },
-  "homepage": "https://udemere.uz",
   "engines": {
     "node": ">=20.0.0"
   },

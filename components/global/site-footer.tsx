@@ -2,52 +2,13 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { Youtube, Instagram, Linkedin } from "lucide-react";
+import Image from 'next/image'
+import { footerSections, socialLinks } from '@/data/mock'
 
 export default function SiteFooter() {
-  const footerSections = [
-    {
-      title: "About",
-      links: [
-        { name: "Products", href: "/products" },
-        { name: "About Us", href: "/about" },
-        { name: "FAQ", href: "/faq" },
-      ],
-    },
-    {
-      title: "Services",
-      links: [
-        { name: "Terms Of Service", href: "/terms" },
-        { name: "Privacy Policy", href: "/privacy" },
-        { name: "Store", href: "/store" },
-      ],
-    },
-    {
-      title: "Help Center",
-      links: [
-        { name: "Return", href: "/return" },
-        { name: "Purches", href: "/purches" },
-      ],
-    },
-    {
-      title: "Contact Us",
-      links: [
-        { name: "Email", href: "mailto:info@goldenhive.com" },
-        { name: "Phone", href: "tel:+1234567890" },
-        { name: "Address", href: "/contact" },
-      ],
-    },
-  ];
-
-  const socialLinks = [
-    { icon: Youtube, href: "#" },
-    { icon: Instagram, href: "#" },
-    { icon: Linkedin, href: "#" },
-  ];
-
   return (
-    <motion.footer initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="bg-black text-amber-500">
-      <div className="container px-4 py-12 mx-auto">
+    <motion.footer initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="bg-black text-amber-500 py-12">
+      <div className="container">
         <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-4">
           {footerSections.map((section) => (
             <div key={section.title}>
@@ -67,8 +28,8 @@ export default function SiteFooter() {
 
         <div className="mt-12 pt-8 border-t border-amber-500/20">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <Link href="/" className="flex items-center space-x-2">
-              <span className="text-xl font-bold">Golden Hive Honey</span>
+            <Link href="/">
+              <Image src="/logo.svg" alt="Honey" width={228} height={66} />
             </Link>
 
             <div className="flex space-x-4">
