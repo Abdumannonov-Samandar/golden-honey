@@ -1,13 +1,14 @@
 import { motion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import Image from 'next/image'
+import Link from 'next/link'
 
 export function Hero() {
   return (
-    <section className="bg-[url('/hero.png')] bg-contain bg-center bg-no-repeat">
-      <motion.div
+    <motion.section
         initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
+        animate={{ opacity: 1 }} className="bg-[url('/hero.png')] bg-contain bg-center bg-no-repeat">
+      <motion.div
         className="relative h-screen  flex flex-col items-center justify-center text-center px-4"
       >
         <motion.h1
@@ -22,25 +23,13 @@ export function Hero() {
           <div className="absolute inset-0 bg-[url('/honey.svg')] bg-contain bg-center bg-no-repeat" />
         </motion.div>
 
-        <motion.div
-          initial={{ y: 20, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ delay: 0.5 }}
-          className="flex gap-4 mt-8"
-        >
-          <Button
-            variant="outline"
-            className="bg-transparent border-primary text-primary hover:bg-primary hover:text-background"
-          >
-            Shop
-          </Button>
-          <Button
-            variant="outline"
-            className="bg-transparent border-primary text-primary hover:bg-primary hover:text-background"
-          >
-            Catalog
-          </Button>
-        </motion.div>
+
+          <Link href='/shop' className='absolute top-[48.5%] left-[34.1%]'>
+            <Image src="/shop.svg" width={20} height={20} alt="Fireweed Blossom Honey" className='w-[85px] h-[85px]'/>
+          </Link>
+          <Link href='/catalog' className='absolute top-[39.9%] right-[29.4%]'>
+            <Image src="/catalog.svg" width={20} height={20} alt="Fireweed Blossom Honey" className='w-[85px] h-[85px]'/>
+          </Link>
 
         <motion.div
           initial={{ y: 50, opacity: 0 }}
@@ -51,6 +40,6 @@ export function Hero() {
           <ChevronDown className="w-8 h-8 text-primary" />
         </motion.div>
       </motion.div>
-    </section>
+    </motion.section>
   );
 }
