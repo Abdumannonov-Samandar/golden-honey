@@ -13,7 +13,7 @@ const products = [
 
 export function Products() {
   return (
-    <section className="py-10 md:py-20">
+    <section className="py-10 md:py-20" id='products'>
       <motion.div
         initial={{ y: 50, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}

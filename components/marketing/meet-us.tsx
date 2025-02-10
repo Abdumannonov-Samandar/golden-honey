@@ -7,7 +7,7 @@ import Image from "next/image";
 export default function MeetUsSection() {
   return (
     <section className="py-10 md:py-16">
-      <div className="container">
+      <div className="container max-w-6xl">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
