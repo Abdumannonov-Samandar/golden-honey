@@ -9,10 +9,10 @@ import Image from 'next/image'
 
 const menuItems = [
     { name: "Home", href: "/" },
-    { name: "About Us", href: "/about" },
-    { name: "Products", href: "/products" },
-    { name: "Contact", href: "/contact" },
-    { name: "Gallery", href: "/gallery" },
+    { name: "About Us", href: "#about" },
+    { name: "Products", href: "#products" },
+    { name: "Contact", href: "#contact" },
+    { name: "Gallery", href: "#gallery" },
   ];
 
 export default function SiteHeader() {
@@ -20,7 +20,7 @@ export default function SiteHeader() {
   const pathname = usePathname();
 
   return (
-    <header className="w-full bg-background border-b border-primary/20">
+    <header className="w-full border-b border-primary/20 sticky top-0 overflow-hidden z-50 backdrop-blur-lg">
       <div className="container">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
@@ -68,7 +68,7 @@ export default function SiteHeader() {
                             transition={{ duration: 0.3 }}
                           />
                           <motion.div
-                            className="w-12 h-[1px] bg-gradient-to-r from-primary to-primary/40 rounded-lg"
+                            className="w-12 h-px bg-gradient-to-r from-primary to-primary/40 rounded-lg"
                             layoutId="underline"
                             initial={{ opacity: 0, width: 0 }}
                             animate={{ opacity: 1, width: "3rem" }}

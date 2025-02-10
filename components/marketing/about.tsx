@@ -4,7 +4,7 @@ import Image from 'next/image'
 
 export function About() {
   return (
-    <section className="py-10 md:py-20">
+    <section className="py-10 md:py-20" id='about'>
       <div className="container max-w-6xl flex flex-col md:flex-row items-center gap-12">
         <motion.div
           initial={{ x: -100, opacity: 0 }}
