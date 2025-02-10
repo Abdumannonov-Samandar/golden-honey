@@ -13,16 +13,16 @@ const images = [
 
 export function Gallery() {
   return (
-    <div className="min-h-screen py-20 px-4">
+    <section className="py-10 md:py-20">
       <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
-        className="max-w-6xl mx-auto"
+        className="container max-w-6xl"
       >
         <div className="flex items-center gap-4 mb-16">
           <motion.img
-            src="/bee-icon.png"
+            src="/bee.svg"
             alt="Bee Icon"
             className="w-12 h-12"
             animate={{ y: [0, -10, 0] }}
@@ -59,20 +59,20 @@ export function Gallery() {
             <Button
               variant="outline"
               size="icon"
-              className="bg-black/50 border-[#FFD700] text-[#FFD700] hover:bg-[#FFD700] hover:text-black rounded-full"
+              className="bg-black/50 border-primary text-primary hover:bg-primary hover:text-black rounded-full"
             >
               <ChevronLeft className="w-4 h-4" />
             </Button>
             <Button
               variant="outline"
               size="icon"
-              className="bg-black/50 border-[#FFD700] text-[#FFD700] hover:bg-[#FFD700] hover:text-black rounded-full"
+              className="bg-black/50 border-primary text-primary hover:bg-primary hover:text-black rounded-full"
             >
               <ChevronRight className="w-4 h-4" />
             </Button>
           </div>
         </div>
       </motion.div>
-    </div>
+    </section>
   );
 }

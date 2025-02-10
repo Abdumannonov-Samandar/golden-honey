@@ -85,10 +85,10 @@ export default function SiteHeader() {
 
           {/* Auth Buttons */}
           <div className="hidden lg:flex items-center gap-4">
-            <Link href="/signin" className="auth-button border-primary text-primary">
+            <Link href="/signin" className="auth-button border-primary hover:bg-primary/40 text-primary">
               Sign In
             </Link>
-            <Link href="/signup" className="auth-button bg-primary/50 text-slate-10">
+            <Link href="/signup" className="auth-button bg-primary/70 text-slate-10">
               Sign Up
             </Link>
           </div>

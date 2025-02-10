@@ -13,12 +13,12 @@ const products = [
 
 export function Products() {
   return (
-    <div className="min-h-screen py-20 px-4">
+    <section className="py-10 md:py-20">
       <motion.div
         initial={{ y: 50, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
         viewport={{ once: true }}
-        className="max-w-6xl mx-auto"
+        className="container max-w-6xl"
       >
         <div className="flex items-center gap-4 mb-16">
           <motion.div animate={{ rotate: [0, 360] }} transition={{ duration: 20, repeat: Infinity, ease: "linear" }}>
@@ -40,7 +40,7 @@ export function Products() {
               style={{ clipPath: "polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%)" }}
             >
               <div className="relative w-full h-full">
-                <div className="absolute inset-0 bg-background transform rotate-45 rounded-xl" />
+                <div className="absolute inset-0 bg-slate-955 transform rotate-45 rounded-xl" />
                 <div className="absolute inset-0 flex flex-col items-center justify-center text-primary">
                   <span className="text-4xl mb-2">{product.icon}</span>
                   <span className="text-sm font-medium">{product.name}</span>
@@ -50,6 +50,6 @@ export function Products() {
           ))}
         </div>
       </motion.div>
-    </div>
+    </section>
   );
 }

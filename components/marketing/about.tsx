@@ -4,8 +4,8 @@ import Image from 'next/image'
 
 export function About() {
   return (
-    <div className="min-h-screen py-20 px-4">
-      <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12">
+    <section className="py-10 md:py-20">
+      <div className="container max-w-6xl flex flex-col md:flex-row items-center gap-12">
         <motion.div
           initial={{ x: -100, opacity: 0 }}
           whileInView={{ x: 0, opacity: 1 }}
@@ -46,14 +46,14 @@ export function About() {
         >
           <div className="relative w-full aspect-square">
             <Image width={500} height={500} src="/about.svg" alt="Honey Jar" className="w-full h-full object-contain" />
-            <motion.div
+            {/* <motion.div
               className="absolute inset-0 bg-[url('/about.svg')] bg-no-repeat bg-contain opacity-30"
               animate={{ rotate: 360 }}
               transition={{ duration: 50, repeat: Infinity, ease: "linear" }}
-            />
+            /> */}
           </div>
         </motion.div>
       </div>
-    </div>
+    </section>
   );
 }
