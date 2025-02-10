@@ -68,7 +68,7 @@ export default function SiteHeader() {
                             transition={{ duration: 0.3 }}
                           />
                           <motion.div
-                            className="w-12 h-px bg-gradient-to-r from-primary to-primary/40 rounded-lg"
+                            className="w-12 h-[1px] bg-gradient-to-r from-primary to-primary/40 rounded-lg"
                             layoutId="underline"
                             initial={{ opacity: 0, width: 0 }}
                             animate={{ opacity: 1, width: "3rem" }}
