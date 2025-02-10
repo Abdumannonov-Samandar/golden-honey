@@ -1,6 +1,10 @@
-# Your Project Name
+# Honey
 
-## Usage
+## Loyihaning Tavsifi
+
+**Honey — foydalanuvchilar uchun estetik va intuitiv dizaynga ega sayt bo'lib, u turli xil xizmatlarni taqdim etadi. Ushbu loyiha Next.js texnologiyasidan foydalanib ishlab chiqilgan va foydalanuvchi tajribasiga katta e'tibor qaratilgan**
+
+---
 
 **Bun install**
 
