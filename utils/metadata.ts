@@ -13,7 +13,7 @@ export function createMetadata(override: Metadata): Metadata {
     },
     twitter: {
       card: "summary_large_image",
-      creator: "@miracleprogrammer",
+      creator: "@Abdumannonov-Samandar",
       title: override.title ?? "Next Starter",
       description: override.description ?? "Next.js + Prisma + Radix UI + Tailwind CSS + Vercel.",
       images: "https://example.uz/og.png",
