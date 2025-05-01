@@ -16,7 +16,7 @@ export function createMetadata(override: Metadata): Metadata {
       creator: "@Abdumannonov-Samandar",
       title: override.title ?? "Next Starter",
       description: override.description ?? "Next.js + Prisma + Radix UI + Tailwind CSS + Vercel.",
-      images: "https://example.uz/og.png",
+      images: "/og.png",
       ...override.twitter,
     },
   };
