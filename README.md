@@ -22,7 +22,7 @@
 
 **Project dependencies install**
 
-```bash
+```bash 
   bun install
 ```
 
